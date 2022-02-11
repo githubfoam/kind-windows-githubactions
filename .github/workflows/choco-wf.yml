@@ -1,0 +1,91 @@
+
+name: "choco kind CI workflow"
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+      # https://crontab.guru/
+      # https://docs.github.com/en/actions/reference/events-that-trigger-workflows
+      - cron:  '0 0 * * FRI' ##execution of a task in the first minute of the month  
+
+
+
+
+jobs:
+
+# https://github.com/actions/virtual-environments
+  choco-windows-latest:
+    name: "choco kind  windows-latest"  
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1     
+    - name: "osfingerprinting"
+      run: systeminfo | more  
+    - name: "check curl version"
+      run: curl --version      
+    - name: "install curl"
+      run: choco install curl      
+    # https://kind.sigs.k8s.io/docs/user/quick-start/
+    - name: "Installing With A Package Manager - Choco"
+      run: choco install kind
+    - name: "see the list of kind clusters"
+      run: kind get clusters #see the list of kind clusters
+
+# https://github.com/actions/virtual-environments
+  choco-windows-2022:
+    name: "choco kind  windows-2022"  
+    runs-on: windows-2022
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1     
+    - name: "osfingerprinting"
+      run: systeminfo | more  
+    - name: "check curl version"
+      run: curl --version      
+    - name: "install curl"
+      run: choco install curl      
+    # https://kind.sigs.k8s.io/docs/user/quick-start/
+    - name: "Installing With A Package Manager - Choco"
+      run: choco install kind
+    - name: "see the list of kind clusters"
+      run: kind get clusters #see the list of kind clusters      
+
+# https://github.com/actions/virtual-environments
+  choco-windows-2019:
+    name: "choco kind  windows-2019"  
+    runs-on: windows-2019
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1     
+    - name: "osfingerprinting"
+      run: systeminfo | more  
+    - name: "check curl version"
+      run: curl --version      
+    - name: "install curl"
+      run: choco install curl      
+    # https://kind.sigs.k8s.io/docs/user/quick-start/
+    - name: "Installing With A Package Manager - Choco"
+      run: choco install kind
+    - name: "see the list of kind clusters"
+      run: kind get clusters #see the list of kind clusters 
+
+# https://github.com/actions/virtual-environments
+  choco-windows-2016:
+    name: "choco kind  windows-2016"  
+    runs-on: windows-2016
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1     
+    - name: "osfingerprinting"
+      run: systeminfo | more  
+    - name: "check curl version"
+      run: curl --version      
+    - name: "install curl"
+      run: choco install curl      
+    # https://kind.sigs.k8s.io/docs/user/quick-start/
+    - name: "Installing With A Package Manager - Choco"
+      run: choco install kind
+    - name: "see the list of kind clusters"
+      run: kind get clusters #see the list of kind clusters       
