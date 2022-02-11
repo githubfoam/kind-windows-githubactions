@@ -81,7 +81,7 @@ jobs:
       run: kind get clusters #see the list of kind clusters  
 
 # https://github.com/actions/virtual-environments
-  powershell-kind-windows-2019:
+  powershell-kind-windows-2016:
     name: "kind windows-2016"  
     runs-on: windows-2016
     steps:
