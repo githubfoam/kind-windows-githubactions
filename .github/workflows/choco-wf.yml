@@ -1,5 +1,5 @@
 
-name: "choco kind CI workflow"
+name: "choco windows kind CI workflow"
 
 on:
   push:
@@ -71,4 +71,22 @@ jobs:
     - name: "see the list of kind clusters"
       run: kind get clusters #see the list of kind clusters 
 
-     
+# NOT OK     
+# https://github.com/actions/virtual-environments
+  # choco-windows-2016:
+  #   name: "choco kind  windows-2016"  
+  #   runs-on: windows-2016
+  #   steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v1     
+  #   - name: "osfingerprinting"
+  #     run: systeminfo | more  
+  #   - name: "check curl version"
+  #     run: curl --version      
+  #   - name: "install curl"
+  #     run: choco install curl      
+  #   # https://kind.sigs.k8s.io/docs/user/quick-start/
+  #   - name: "Installing With A Package Manager - Choco"
+  #     run: choco install kind
+  #   - name: "see the list of kind clusters"
+  #     run: kind get clusters #see the list of kind clusters    

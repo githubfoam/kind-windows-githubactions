@@ -1,5 +1,5 @@
 
-name: "powershell kind CI workflow"
+name: "powershell windows kind CI workflow"
 
 on:
   push:
